@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mingle</title>
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <a class="logo" href="./index.html" style="color: #c72d26">
+        <img src="./logo.png" alt="logo" />
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li>
+            <img src="./images/intro.png" alt="마을 지도" class="nav-icon" />
+            <a href="./map.html">마을 지도</a>
+          </li>
+          <li>
+            <img src="./images/time.png" alt="주민 소개" class="nav-icon" />
+            <a href="./intro.html">주민 소개</a>
+          </li>
+          <li>
+            <img src="./images/hide.png" alt="시간 여행" class="nav-icon" />
+            <a href="./time.html">시간 여행</a>
+          </li>
+          <li style="border-bottom: 3px solid #bcd7ea">
+            <img
+              src="./images/story.png"
+              alt="숨겨진 이야기"
+              class="nav-icon"
+            />
+            <a href="./hide.html" style="color: #c72d26">숨겨진 이야기</a>
+          </li>
+          <li>
+            <img src="./images/map.png" alt="map" class="nav-icon" />
+            <a href="./adventure.html">탐험 하기</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="hidden-story-main">
+      <section class="intro-section">
+        <h1 class="main-title">숨겨진 이야기</h1>
+        <p class="intro-quote">
+          "마을의 전설과 비밀을 따라 신비로운 이야기를 하나씩 발견보세요."
+        </p>
+      </section>
+
+      <section class="lookout-section">
+        <h2 class="section-title">lookout</h2>
+        <p class="section-subtitle">"마법의 두려이 사라진 날"</p>
+
+        <div class="potion-carousel">
+          <div class="carousel-container">
+            <div class="potion-image left" data-position="left">
+              <img src="./images/left.png" alt="파란 물약" />
+            </div>
+            <div class="potion-image center" data-position="center">
+              <img src="./images/center.png" alt="보라 물약" />
+            </div>
+            <div class="potion-image right" data-position="right">
+              <img src="./images/right.png" alt="초록 물약" />
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-quote">
+          <p>
+            "마을 깊숙이 숨겨진 전설과 비밀을 발견하며<br />미지의 이야기를
+            풀어보세요."
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <div class="footer-content">
+        <p class="email">9932asdf@naver.com</p>
+        <p class="author">박민지</p>
+        <p class="school">계원예술대학교</p>
+      </div>
+      <div class="footer-logo">
+        <img src="./logo.png" alt="MINGLE" class="logo-image" />
+      </div>
+    </footer>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const leftImage = document.querySelector(".potion-image.left img");
+      const centerImage = document.querySelector(".potion-image.center img");
+      const rightImage = document.querySelector(".potion-image.right img");
+
+      // 왼쪽 이미지 클릭 시
+      leftImage.addEventListener("click", () => {
+        const temp = centerImage.src;
+        centerImage.src = leftImage.src;
+        leftImage.src = rightImage.src;
+        rightImage.src = temp;
+      });
+
+      // 오른쪽 이미지 클릭 시
+      rightImage.addEventListener("click", () => {
+        const temp = centerImage.src;
+        centerImage.src = rightImage.src;
+        rightImage.src = leftImage.src;
+        leftImage.src = temp;
+      });
+    });
+  </script>
+</html>
